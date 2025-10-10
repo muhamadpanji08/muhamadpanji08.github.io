@@ -1,98 +1,123 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Kreatif</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portofolio Kreatif Modern</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <!-- Navbar -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#profil">Profil</a></li>
-                <li><a href="#pendidikan">Pendidikan</a></li>
-                <li><a href="#pengalaman">Pengalaman</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#prestasi">Prestasi</a></li>
-                <li><a href="#portofolio">Portofolio</a></li>
-            </ul>
-        </nav>
-    </header>
 
+  <header class="navbar">
+    <div class="container nav-container">
+      <div class="logo">John Doe</div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#profil">Profil</a></li>
+          <li><a href="#pendidikan">Pendidikan</a></li>
+          <li><a href="#pengalaman">Pengalaman</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#prestasi">Prestasi</a></li>
+          <li><a href="#portofolio">Portofolio</a></li>
+        </ul>
+      </nav>
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    </div>
+  </header>
+
+  <main>
     <!-- Profil -->
-    <section id="profil">
-        <div class="container">
-            <h2>Profil</h2>
-            <p>Nama: John Doe</p>
-            <p>Deskripsi: Web Developer kreatif dengan pengalaman dalam desain dan pengembangan aplikasi web. Memiliki keahlian dalam berbagai teknologi dan fokus pada pengalaman pengguna yang luar biasa.</p>
-        </div>
+    <section id="profil" class="section fade-in">
+      <div class="container">
+        <h2>Profil</h2>
+        <p>
+          Saya John Doe, Web Developer kreatif yang suka membuat desain modern dan interaktif dengan fokus pada pengalaman pengguna yang luar biasa dan performa tinggi.
+        </p>
+      </div>
     </section>
 
     <!-- Pendidikan -->
-    <section id="pendidikan">
-        <div class="container">
-            <h2>Pendidikan</h2>
-            <ul>
-                <li><strong>Universitas XYZ</strong> - Teknik Informatika (2018 - 2022)</li>
-                <li><strong>SMK ABC</strong> - Teknik Komputer (2015 - 2018)</li>
-            </ul>
-        </div>
+    <section id="pendidikan" class="section fade-in delay-1">
+      <div class="container">
+        <h2>Pendidikan</h2>
+        <ul>
+          <li><strong>Universitas XYZ</strong> – Teknik Informatika (2018 - 2022)</li>
+          <li><strong>SMK ABC</strong> – Teknik Komputer (2015 - 2018)</li>
+        </ul>
+      </div>
     </section>
 
-    <!-- Pengalaman Organisasi -->
-    <section id="pengalaman">
-        <div class="container">
-            <h2>Pengalaman Organisasi</h2>
-            <ul>
-                <li><strong>Himpunan Mahasiswa Teknik Informatika</strong> - Ketua (2020 - 2021)</li>
-                <li><strong>Developer Club</strong> - Anggota (2019 - 2020)</li>
-            </ul>
-        </div>
+    <!-- Pengalaman -->
+    <section id="pengalaman" class="section fade-in delay-2">
+      <div class="container">
+        <h2>Pengalaman Organisasi</h2>
+        <ul>
+          <li><strong>Ketua Himpunan Mahasiswa TI</strong> (2020 - 2021)</li>
+          <li><strong>Anggota Developer Club</strong> (2019 - 2020)</li>
+        </ul>
+      </div>
     </section>
 
     <!-- Skills -->
-    <section id="skills">
-        <div class="container">
-            <h2>Skills</h2>
-            <ul>
-                <li>HTML, CSS, JavaScript</li>
-                <li>React, Node.js</li>
-                <li>UI/UX Design</li>
-                <li>Git, GitHub</li>
-            </ul>
+    <section id="skills" class="section fade-in delay-3">
+      <div class="container">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <div class="skill">HTML</div>
+          <div class="skill">CSS</div>
+          <div class="skill">JavaScript</div>
+          <div class="skill">React</div>
+          <div class="skill">Node.js</div>
+          <div class="skill">UI/UX Design</div>
+          <div class="skill">Git & GitHub</div>
+          <div class="skill">Firebase</div>
         </div>
+      </div>
     </section>
 
     <!-- Prestasi -->
-    <section id="prestasi">
-        <div class="container">
-            <h2>Prestasi</h2>
-            <ul>
-                <li>Juara 1 Lomba Web Development - 2021</li>
-                <li>Penerima Beasiswa Prestasi Universitas XYZ</li>
-            </ul>
-        </div>
+    <section id="prestasi" class="section fade-in delay-4">
+      <div class="container">
+        <h2>Prestasi</h2>
+        <ul>
+          <li>Juara 1 Lomba Web Development 2021</li>
+          <li>Penerima Beasiswa Prestasi Universitas XYZ</li>
+        </ul>
+      </div>
     </section>
 
     <!-- Portofolio -->
-    <section id="portofolio">
-        <div class="container">
-            <h2>Portofolio</h2>
-            <div class="portfolio-item">
-                <img src="screenshot1.jpg" alt="Aplikasi 1" class="screenshot">
-                <h3>Nama Aplikasi: Aplikasi Web E-Commerce</h3>
-                <p>Tech Stack: HTML, CSS, JavaScript, Node.js, MongoDB</p>
-            </div>
-            <div class="portfolio-item">
-                <img src="screenshot2.jpg" alt="Aplikasi 2" class="screenshot">
-                <h3>Nama Aplikasi: Aplikasi To-Do List</h3>
-                <p>Tech Stack: React, CSS, Firebase</p>
-            </div>
-        </div>
-    </section>
+    <section id="portofolio" class="section fade-in delay-5">
+      <div class="container">
+        <h2>Portofolio</h2>
+        <div class="portfolio-grid">
 
-    <script src="script.js"></script>
+          <div class="portfolio-item">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Aplikasi E-Commerce" />
+            <div class="portfolio-info">
+              <h3>Aplikasi E-Commerce</h3>
+              <p><strong>Tech Stack:</strong> HTML, CSS, JavaScript, Node.js, MongoDB</p>
+            </div>
+          </div>
+
+          <div class="portfolio-item">
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Aplikasi To-Do List" />
+            <div class="portfolio-info">
+              <h3>Aplikasi To-Do List</h3>
+              <p><strong>Tech Stack:</strong> React, CSS, Firebase</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 John Doe | Portofolio Kreatif</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
