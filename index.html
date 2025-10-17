@@ -1,124 +1,404 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portofolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Alex Developer</title>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">Alex</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#profile">Profil</a></li>
+                <li><a href="#education">Pendidikan</a></li>
+                <li><a href="#organisasi">Organisasi</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#prestasi">Prestasi</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  <header class="navbar">
-    <div class="container nav-container">
-      <div class="logo">Muhamad Panji</div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#profil">Profil</a></li>
-          <li><a href="#pendidikan">Pendidikan</a></li>
-          <li><a href="#pengalaman">Pengalaman</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#prestasi">Prestasi</a></li>
-          <li><a href="#portofolio">Portofolio</a></li>
-        </ul>
-      </nav>
-      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-    </div>
-  </header>
-
-  <main>
-    <!-- Profil -->
-    <section id="profil" class="section fade-in">
-      <div class="container">
-        <h2>Profil</h2>
-        <p>
-          Saya Muhamad Panji, junior Web Developer kreatif yang suka membuat desain modern dan interaktif dengan fokus pada pengalaman pengguna yang luar biasa dan performa tinggi.
-        </p>
-      </div>
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Halo, Saya Alex 👋</h1>
+            <p>Web Developer & UI/UX Designer yang passionate menciptakan pengalaman digital yang luar biasa</p>
+            <button class="cta-button" onclick="document.getElementById('profile').scrollIntoView({behavior:'smooth'})">Pelajari Lebih Lanjut</button>
+        </div>
     </section>
 
-    <!-- Pendidikan -->
-    <section id="pendidikan" class="section fade-in delay-1">
-      <div class="container">
-        <h2>Pendidikan</h2>
-        <ul>
-          <li><strong>Sekolah Dasar</strong> – SDN Cipayung 02 (2015 - 2021)</li>
-          <li><strong>Sekolah Menengah Pertama</strong> – SMP TIK Mizan (2021 - 2024)</li>
-          <li><strong>Sekolah Menengah Kejuruan</strong> – SMK Informatika Utama (2024)</li>
-        </ul>
-      </div>
+    <!-- Profile -->
+    <section class="profile" id="profile">
+        <div class="container">
+            <h2>Tentang Saya</h2>
+            <div class="profile-content">
+                <div class="profile-image">👨‍💻</div>
+                <div class="profile-text">
+                    <h3>Seorang Developer Berbakat</h3>
+                    <p>Saya adalah seorang web developer dengan 5+ tahun pengalaman dalam menciptakan solusi digital yang inovatif dan user-friendly. Passionate dalam mengembangkan teknologi web terkini dan selalu mencari cara untuk meningkatkan skill.</p>
+                    
+                    <div class="info-item">
+                        <strong>📧 Email</strong>
+                        <p>alex@example.com</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <strong>📱 No. Telepon</strong>
+                        <p>+62 812-3456-7890</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <strong>📍 Lokasi</strong>
+                        <p>Jakarta, Indonesia</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <strong>🔗 Website</strong>
+                        <p>www.alexportfolio.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Pengalaman -->
-    <section id="pengalaman" class="section fade-in delay-2">
-      <div class="container">
-        <h2>Pengalaman Organisasi</h2>
-        <ul>
-          <li><strong>Ketua Himpunan Mahasiswa TI</strong> (2020 - 2021)</li>
-          <li><strong>Anggota Developer Club</strong> (2019 - 2020)</li>
-        </ul>
-      </div>
+    <!-- Education -->
+    <section class="education" id="education">
+        <div class="container">
+            <h2>Pendidikan</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="year">2019 - 2023</div>
+                    <h4>Sarjana Teknik Informatika</h4>
+                    <p><strong>Universitas Teknologi Indonesia</strong></p>
+                    <p>GPA: 3.85/4.0 | Cumlaude</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="year">2020 - 2021</div>
+                    <h4>Bootcamp Web Development</h4>
+                    <p><strong>Coding Academy Indonesia</strong></p>
+                    <p>Fokus pada Full Stack Web Development dengan React & Node.js</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="year">2023 - Sekarang</div>
+                    <h4>Kursus Advanced UI/UX Design</h4>
+                    <p><strong>Interaction Design Foundation</strong></p>
+                    <p>Memperdalam skill dalam desain user interface dan user experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="experience" id="experience">
+        <div class="container">
+            <h2>Pengalaman Kerja</h2>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <h4>PT Teknologi Digital Maju</h4>
+                    <div class="position">Senior Frontend Developer</div>
+                    <div class="year">2022 - Sekarang</div>
+                    <p>Memimpin tim frontend dalam mengembangkan aplikasi web skala enterprise dengan React.js. Meningkatkan performa aplikasi hingga 40% dan mengimplementasikan best practices dalam development.</p>
+                </div>
+
+                <div class="experience-card">
+                    <h4>StartUp inovasi.id</h4>
+                    <div class="position">Full Stack Developer</div>
+                    <div class="year">2021 - 2022</div>
+                    <p>Mengembangkan platform e-commerce dari nol hingga launching. Bertanggung jawab atas frontend dan backend development, database design, dan deployment.</p>
+                </div>
+
+                <div class="experience-card">
+                    <h4>Agensi Digital Kreatif</h4>
+                    <div class="position">Junior Web Developer</div>
+                    <div class="year">2019 - 2021</div>
+                    <p>Membuat website untuk berbagai klien korporat. Menangani responsive design, JavaScript development, dan client support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="organisasi" id="organisasi">
+        <div class="container">
+            <h2>Pengalaman Organisasi</h2>
+            <div class="org-grid">
+                <div class="org-card">
+                    <div class="emoji">👨‍💼</div>
+                    <h4>Ketua Divisi IT</h4>
+                    <div class="role">Forum Developer Indonesia (2022-2023)</div>
+                    <p>Memimpin 50+ anggota komunitas dalam mengembangkan proyek open source dan mengadakan workshop teknologi web terbaru.</p>
+                </div>
+
+                <div class="org-card">
+                    <div class="emoji">🎓</div>
+                    <h4>Mentor Program</h4>
+                    <div class="role">Universitas Teknologi Indonesia (2021-Sekarang)</div>
+                    <p>Membimbing mahasiswa baru dalam programming fundamentals dan best practices dalam software development.</p>
+                </div>
+
+                <div class="org-card">
+                    <div class="emoji">📊</div>
+                    <h4>Koordinator Event</h4>
+                    <div class="role">Tech Conference Asia 2023</div>
+                    <p>Mengelola event developer terbesar di Asia dengan 5000+ peserta dan 100+ speaker internasional.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Skills -->
-    <section id="skills" class="section fade-in delay-3">
-      <div class="container">
-        <h2>Skills</h2>
-        <div class="skills-grid">
-          <div class="skill">HTML</div>
-          <div class="skill">CSS</div>
-          <div class="skill">JavaScript</div>
-          <div class="skill">React</div>
-          <div class="skill">Node.js</div>
-          <div class="skill">UI/UX Design</div>
-          <div class="skill">Git & GitHub</div>
-          <div class="skill">Firebase</div>
+    <section class="skills-section" id="skills">
+        <div class="container">
+            <h2>Keahlian & Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h4>Frontend Development</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">React.js</span>
+                        <span class="skill-tag">Vue.js</span>
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">TypeScript</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Backend Development</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Express.js</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Design & Tools</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Adobe XD</span>
+                        <span class="skill-tag">UI/UX Design</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Webpack</span>
+                        <span class="skill-tag">Docker</span>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
     <!-- Prestasi -->
-    <section id="prestasi" class="section fade-in delay-4">
-      <div class="container">
-        <h2>Prestasi</h2>
-        <ul>
-          <li>Juara 1 Lomba Web Development 2021</li>
-          <li>Penerima Beasiswa Prestasi Universitas XYZ</li>
-        </ul>
-      </div>
-    </section>
+    <section class="prestasi" id="prestasi">
+        <div class="container">
+            <h2>Prestasi & Penghargaan</h2>
+            <div class="prestasi-grid">
+                <div class="prestasi-card">
+                    <div class="icon">🏆</div>
+                    <h4>Developer of the Year 2023</h4>
+                    <p>Penghargaan dari Indonesian Tech Association untuk kontribusi luar biasa dalam pengembangan web modern</p>
+                </div>
 
-    <!-- Portofolio -->
-    <section id="portofolio" class="section fade-in delay-5">
-      <div class="container">
-        <h2>Portofolio</h2>
-        <div class="portfolio-grid">
+                <div class="prestasi-card">
+                    <div class="icon">⭐</div>
+                    <h4>Best Innovation Award</h4>
+                    <p>Mendapat penghargaan untuk proyek e-commerce yang meningkatkan penjualan klien hingga 300%</p>
+                </div>
 
-          <div class="portfolio-item">
-            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Aplikasi E-Commerce" />
-            <div class="portfolio-info">
-              <h3>Aplikasi E-Commerce</h3>
-              <p><strong>Tech Stack:</strong> HTML, CSS, JavaScript, Node.js, MongoDB</p>
+                <div class="prestasi-card">
+                    <div class="icon">🥇</div>
+                    <h4>Hackathon Winner 2022</h4>
+                    <p>Memenangkan hackathon nasional dengan proyek aplikasi edukasi berbasis AI</p>
+                </div>
+
+                <div class="prestasi-card">
+                    <div class="icon">📜</div>
+                    <h4>Google Developer Certification</h4>
+                    <p>Tersertifikasi sebagai Associate Cloud Engineer dari Google Cloud</p>
+                </div>
+
+                <div class="prestasi-card">
+                    <div class="icon">👥</div>
+                    <h4>Speaker Internasional</h4>
+                    <p>Pembicara di 15+ konferensi teknologi internasional tentang Modern Web Development</p>
+                </div>
+
+                <div class="prestasi-card">
+                    <div class="icon">💡</div>
+                    <h4>Open Source Contributor</h4>
+                    <p>Kontributor aktif di 10+ proyek open source dengan 2000+ GitHub stars</p>
+                </div>
             </div>
-          </div>
-
-          <div class="portfolio-item">
-            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Aplikasi To-Do List" />
-            <div class="portfolio-info">
-              <h3>Aplikasi To-Do List</h3>
-              <p><strong>Tech Stack:</strong> React, CSS, Firebase</p>
-            </div>
-          </div>
-
         </div>
-      </div>
     </section>
-  </main>
 
-  <footer class="footer">
-    <p>© 2025 John Doe | Portofolio Kreatif</p>
-  </footer>
+    <!-- Portfolio -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <h2>Portfolio</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">🛍️</div>
+                    <div class="portfolio-info">
+                        <h3>E-Commerce Platform</h3>
+                        <p>Platform e-commerce modern dengan fitur lengkap dan payment gateway integration</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                        </div>
+                    </div>
+                </div>
 
-  <script src="script.js"></script>
-</body>
-</html>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">📱</div>
+                    <div class="portfolio-info">
+                        <h3>Mobile App Design</h3>
+                        <p>Desain aplikasi mobile yang user-friendly dan sesuai dengan tren terkini</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Figma</span>
+                            <span class="tag">UI/UX</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">📊</div>
+                    <div class="portfolio-info">
+                        <h3>Analytics Dashboard</h3>
+                        <p>Dashboard analytics real-time dengan visualisasi data yang interaktif</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">D3.js</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">🎮</div>
+                    <div class="portfolio-info">
+                        <h3>Game Portal</h3>
+                        <p>Portal game interaktif dengan sistem scoring dan leaderboard</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Canvas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">💼</div>
+                    <div class="portfolio-info">
+                        <h3>Business Website</h3>
+                        <p>Website korporat dengan CMS terintegrasi dan SEO optimization</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">WordPress</span>
+                            <span class="tag">PHP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">🎨</div>
+                    <div class="portfolio-info">
+                        <h3>Creative Agency Site</h3>
+                        <p>Website agensi kreatif dengan animasi smooth dan portfolio showcase</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">HTML/CSS</span>
+                            <span class="tag">Animation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Hubungi Saya</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h4>📧 Email</h4>
+                        <p>alex@example.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>📱 Phone</h4>
+                        <p>+62 812-3456-7890</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>📍 Lokasi</h4>
+                        <p>Jakarta, Indonesia</p>
+                    </div>
+                </div>
+
+                <form onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <input type="text" placeholder="Nama Anda" required>
+                        <input type="email" placeholder="Email Anda" required>
+                    </div>
+                    <div class="form-group full">
+                        <input type="text" placeholder="Subjek" required>
+                    </div>
+                    <div class="form-group full">
+                        <textarea placeholder="Pesan Anda" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Kirim Pesan</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Alex Portfolio. Semua hak dilindungi.</p>
+    </footer>
+
+    <script>
+        // Smooth scroll navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Terima kasih! Pesan Anda telah dikirim. Saya akan segera menghubungi Anda.');
+            event.target.reset();
+        }
+
+        // Navbar shadow on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 2px 20px rgba(0, 212, 255, 0.15)';
+            } else {
+                nav.style.boxShadow = '0 2px 20px rgba(0, 212, 255, 0.1)';
+            }
+        });
+
+        // Timeline animation
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
