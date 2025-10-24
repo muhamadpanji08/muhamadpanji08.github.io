@@ -3,315 +3,340 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Muhamad Panji</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Portofolio Saya</title>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <div class="logo">Panji</div>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#profile">Profil</a></li>
-                <li><a href="#education">Pendidikan</a></li>
-                <li><a href="#organisasi">Organisasi</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#prestasi">Prestasi</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Kontak</a></li>
-            </ul>
-        </div>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#about">Tentang</a></li>
+            <li><a href="#education">Pendidikan</a></li>
+            <li><a href="#organization">Organisasi</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#achievements">Prestasi</a></li>
+            <li><a href="#portfolio">Portofolio</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
     </nav>
 
-    <!-- Hero -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Halo, Saya Panji 👋</h1>
-            <p>Junior Web Developer yang passionate menciptakan pengalaman digital yang luar biasa</p>
-            <button class="cta-button" onclick="document.getElementById('profile').scrollIntoView({behavior:'smooth'})">Pelajari Lebih Lanjut</button>
+    <section id="home" class="hero">
+        <div class="profile-img">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='100' fill='%231a1a2e'/%3E%3Ccircle cx='100' cy='80' r='30' fill='%2300d4ff'/%3E%3Cpath d='M70 130 Q100 150 130 130 L130 160 Q100 180 70 160 Z' fill='%2300d4ff'/%3E%3C/svg%3E" alt="Profile">
+        </div>
+        <h1>Nama Anda</h1>
+        <p>Web Developer | Designer | Creative Thinker</p>
+    </section>
+
+    <section id="about">
+        <h2>Tentang Saya</h2>
+        <div class="about-content">
+            <p>Saya adalah seorang profesional yang passionate di bidang teknologi dan desain. Dengan pengalaman bertahun-tahun dalam mengembangkan solusi digital yang inovatif dan user-friendly, saya berkomitmen untuk terus belajar dan berkembang dalam industri yang dinamis ini.</p>
+            <br>
+            <p>Saya percaya bahwa kombinasi antara kreativitas dan technical skills adalah kunci untuk menciptakan produk yang tidak hanya fungsional tetapi juga memberikan pengalaman yang luar biasa bagi pengguna.</p>
         </div>
     </section>
 
-    <!-- Profile -->
-    <section class="profile" id="profile">
-        <div class="container">
-            <h2>Tentang Saya</h2>
-            <div class="profile-content">
-                <div class="profile-image">👨‍💻</div>
-                <div class="profile-text">
-                    <h3>Seorang Junior Web Developer Berbakat</h3>
-                    <p>Halo, saya Panji — junior web developer dengan sedikit pengalaman bikin solusi digital yang inovatif dan user-friendly. Saya passionate banget sama teknologi web terbaru dan selalu semangat upgrade skill biar makin relevan dan kece di dunia digital.</p>
-                    
-                    <div class="info-item">
-                        <strong>📧 Email</strong>
-                        <p>jiunk4321@gmail.com</p>
+    <section id="education">
+        <h2>Pendidikan</h2>
+        <div class="grid-3">
+            <div class="card">
+                <h3>S1 Teknik Informatika</h3>
+                <p><strong>Universitas ABC</strong></p>
+                <p>2018 - 2022</p>
+                <p>IPK: 3.75</p>
+                <p>Fokus pada pengembangan web, mobile application, dan artificial intelligence.</p>
+            </div>
+            <div class="card">
+                <h3>SMA Negeri 1</h3>
+                <p><strong>Jurusan IPA</strong></p>
+                <p>2015 - 2018</p>
+                <p>Nilai UN: 90.5</p>
+                <p>Aktif dalam kegiatan olimpiade komputer dan robotika.</p>
+            </div>
+            <div class="card">
+                <h3>Sertifikasi</h3>
+                <p><strong>Full Stack Developer</strong></p>
+                <p>2022</p>
+                <p>Online Course</p>
+                <p>Menguasai React, Node.js, MongoDB, dan teknologi modern lainnya.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="organization">
+        <h2>Pengalaman Organisasi</h2>
+        <div class="grid-3">
+            <div class="card">
+                <h3>Ketua Himpunan Mahasiswa</h3>
+                <p><strong>HMIF 2021</strong></p>
+                <p>Memimpin lebih dari 200 anggota dan mengelola berbagai program kerja yang meningkatkan kualitas mahasiswa informatika.</p>
+            </div>
+            <div class="card">
+                <h3>Koordinator Acara</h3>
+                <p><strong>TechFest 2020</strong></p>
+                <p>Mengkoordinasikan acara teknologi tahunan dengan lebih dari 500 peserta dari berbagai universitas.</p>
+            </div>
+            <div class="card">
+                <h3>Volunteer</h3>
+                <p><strong>Coding for Kids</strong></p>
+                <p>Mengajar pemrograman dasar kepada anak-anak usia 10-15 tahun untuk menumbuhkan minat di bidang teknologi.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="grid-3">
+            <div class="card">
+                <h3>Frontend Development</h3>
+                <div class="skill-bar">
+                    <div class="skill-name">
+                        <span>HTML/CSS</span>
+                        <span>95%</span>
                     </div>
-                    
-                    <div class="info-item">
-                        <strong>📱 No. Telepon</strong>
-                        <p>+62 822-6073-0386</p>
+                    <div class="skill-progress">
+                        <div class="skill-fill" style="width: 95%"></div>
                     </div>
-                    
-                    <div class="info-item">
-                        <strong>📍 Lokasi</strong>
-                        <p>Depok, Indonesia</p>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-name">
+                        <span>JavaScript</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-fill" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-name">
+                        <span>React.js</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-fill" style="width: 85%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Backend Development</h3>
+                <div class="skill-bar">
+                    <div class="skill-name">
+                        <span>Node.js</span>
+                        <span>88%</span>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-fill" style="width: 88%"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-name">
+                        <span>Python</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-fill" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-name">
+                        <span>Database</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-fill" style="width: 85%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Design & Tools</h3>
+                <div class="skill-bar">
+                    <div class="skill-name">
+                        <span>UI/UX Design</span>
+                        <span>82%</span>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-fill" style="width: 82%"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-name">
+                        <span>Figma</span>
+                        <span>88%</span>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-fill" style="width: 88%"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-name">
+                        <span>Git/GitHub</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-fill" style="width: 90%"></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Education -->
-    <section class="education" id="education">
-        <div class="container">
-            <h2>Pendidikan</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="year">2015 - 2021</div>
-                    <h4>Sekolah Dasar</h4>
-                    <p><strong>SDN Cipayung 02</strong></p>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="year">2021 - 2024</div>
-                    <h4>Sekolah Menengah Pertama</h4>
-                    <p><strong>SMP TIK Mizan</strong></p>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="year">2024 - Sekarang</div>
-                    <h4>Sekolah Menengah Kejuruan</h4>
-                    <p><strong>SMK Informatika Utama</strong></p>
-                </div>
+    <section id="achievements">
+        <h2>Prestasi</h2>
+        <div class="grid-3">
+            <div class="card">
+                <h3>🏆 Juara 1 Hackathon</h3>
+                <p><strong>National Tech Competition 2022</strong></p>
+                <p>Mengembangkan aplikasi inovatif yang menyelesaikan masalah sosial dengan teknologi AI dan IoT.</p>
             </div>
-        </div>
-    </section>
-    <section class="organisasi" id="organisasi">
-        <div class="container">
-            <h2>Pengalaman Organisasi</h2>
-            <div class="org-grid">
-                <div class="org-card">
-                    <div class="emoji">👨‍💼</div>
-                    <h4>Ketua Divisi Kebersihan</h4>
-                    <div class="role">SMP TIK Mizan (2023-2024)</div>
-                    <p>Memimpin 40+ anggota untuk menjaga kebersihan sekolah.</p>
-                </div>
-
-                <div class="org-card">
-                    <div class="emoji">🎓</div>
-                    <h4>Panitia 17 Agustus</h4>
-                    <div class="role">SMP TIK Mizan (2023)</div>
-                    <p>Mengarahkan peserta lomba dan mengatur acara 17 Agustus.</p>
-                </div>
-
-                <div class="org-card">
-                    <div class="emoji">📊</div>
-                    <h4>Panitia MPLS</h4>
-                    <div class="role">SMP TIK Mizan 2025</div>
-                    <p>Membimbing dan mengarahkan peserta MPLS 2025.</p>
-                </div>
+            <div class="card">
+                <h3>🎖️ Best Student Award</h3>
+                <p><strong>Universitas ABC 2022</strong></p>
+                <p>Penghargaan sebagai mahasiswa terbaik dengan prestasi akademik dan non-akademik yang outstanding.</p>
+            </div>
+            <div class="card">
+                <h3>⭐ Certified Professional</h3>
+                <p><strong>AWS Solutions Architect</strong></p>
+                <p>Sertifikasi profesional dalam merancang dan mengimplementasikan solusi cloud computing.</p>
             </div>
         </div>
     </section>
 
-    <!-- Skills -->
-    <section class="skills-section" id="skills">
-        <div class="container">
-            <h2>Skills</h2>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h4>Frontend Development</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag">React.js</span>
-                        <span class="skill-tag">Vue.js</span>
-                        <span class="skill-tag">HTML5</span>
-                        <span class="skill-tag">CSS3</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">TypeScript</span>
-                    </div>
+    <section id="portfolio">
+        <h2>Portofolio</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <div class="portfolio-img">🌐</div>
+                <div class="portfolio-overlay">
+                    <h3>E-Commerce Platform</h3>
+                    <p>Website belanja online modern</p>
                 </div>
-
-                <div class="skill-category">
-                    <h4>Backend Development</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">Express.js</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">PHP</span>
-                        <span class="skill-tag">MongoDB</span>
-                        <span class="skill-tag">PostgreSQL</span>
-                    </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-img">📱</div>
+                <div class="portfolio-overlay">
+                    <h3>Mobile Banking App</h3>
+                    <p>Aplikasi perbankan yang user-friendly</p>
                 </div>
-
-                <div class="skill-category">
-                    <h4>Design & Tools</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Figma</span>
-                        <span class="skill-tag">Adobe XD</span>
-                        <span class="skill-tag">UI/UX Design</span>
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">Webpack</span>
-                        <span class="skill-tag">Docker</span>
-                    </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-img">💼</div>
+                <div class="portfolio-overlay">
+                    <h3>Company Profile</h3>
+                    <p>Website profil perusahaan elegant</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-img">🎨</div>
+                <div class="portfolio-overlay">
+                    <h3>Design System</h3>
+                    <p>Sistem desain komprehensif</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-img">📊</div>
+                <div class="portfolio-overlay">
+                    <h3>Dashboard Analytics</h3>
+                    <p>Platform analisis data real-time</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-img">🎮</div>
+                <div class="portfolio-overlay">
+                    <h3>Interactive Game</h3>
+                    <p>Game web interaktif dan seru</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Prestasi -->
-    <section class="prestasi" id="prestasi">
-        <div class="container">
-            <h2>Prestasi</h2>
-            <div class="prestasi-grid">
-                <div class="prestasi-card">
-                    <div class="icon">🏆</div>
-                    <h4>Developer of the Year 2023</h4>
-                    <p>Penghargaan dari Indonesian Tech Association untuk kontribusi luar biasa dalam pengembangan web modern</p>
-                </div>
-
-                <div class="prestasi-card">
-                    <div class="icon">⭐</div>
-                    <h4>Best Innovation Award</h4>
-                    <p>Mendapat penghargaan untuk proyek e-commerce yang meningkatkan penjualan klien hingga 300%</p>
-                </div>
-
-                <div class="prestasi-card">
-                    <div class="icon">🥇</div>
-                    <h4>Hackathon Winner 2022</h4>
-                    <p>Memenangkan hackathon nasional dengan proyek aplikasi edukasi berbasis AI</p>
-                </div>
-
-                <div class="prestasi-card">
-                    <div class="icon">📜</div>
-                    <h4>Google Developer Certification</h4>
-                    <p>Tersertifikasi sebagai Associate Cloud Engineer dari Google Cloud</p>
-                </div>
-
-                <div class="prestasi-card">
-                    <div class="icon">👥</div>
-                    <h4>Speaker Internasional</h4>
-                    <p>Pembicara di 15+ konferensi teknologi internasional tentang Modern Web Development</p>
-                </div>
-
-                <div class="prestasi-card">
-                    <div class="icon">💡</div>
-                    <h4>Open Source Contributor</h4>
-                    <p>Kontributor aktif di 10+ proyek open source dengan 2000+ GitHub stars</p>
-                </div>
+    <section id="contact">
+        <h2>Hubungi Saya</h2>
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+                <label for="name">Nama</label>
+                <input type="text" id="name" required>
             </div>
-        </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Pesan</label>
+                <textarea id="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn">Kirim Pesan</button>
+        </form>
     </section>
 
-    <!-- Portofolio -->
-    <section class="portofolio" id="portfolio">
-        <div class="container">
-            <h2>Portofolio</h2>
-            <div class="portofolio-grid">
-                <div class="portofolio-item">
-                    <div class="portofolio-image">🛍️</div>
-                    <div class="portfolio-info">
-                        <h3>Form Login</h3>
-                        <p>Form login yang saya buat ketika kelas 10</p>
-                        <div class="portofolio-tags">
-                            <span class="tag">HTML</span>
-                            <span class="tag">CSS</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portofolio-item">
-                    <div class="portofolio-image">📱</div>
-                    <div class="portofolio-info">
-                        <h3>Web Statis</h3>
-                        <p>Web penjualan online yang saya buat ketika kelas 10</p>
-                        <div class="portofolio-tags">
-                            <span class="tag">HTML</span>
-                            <span class="tag">CSS</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portofolio-item">
-                    <div class="portofolio-image">📊</div>
-                    <div class="portofolio-info">
-                        <h3>Introdution to HTML</h3>
-                        <p>Mempelajari tentang HTML</p>
-                        <div class="portofolio-tags">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item">
-                    <div class="portofolio-image">🎮</div>
-                    <div class="portofolio-info">
-                        <h3>Introdution to CSS</h3>
-                        <p>Mempelajari tentang CSS</p>
-                        <div class="portofolio-tags">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portofolio-item">
-                    <div class="portofolio-image">💼</div>
-                    <div class="portofolio-info">
-                        <h3>Introdution JavaScript</h3>
-                        <p>Mempelajari tentang JavaScript</p>
-                        <div class="portofolio-tags">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portofolio-item">
-                    <div class="portfolio-image">🎨</div>
-                    <div class="portofolio-info">
-                        <h3>Intermediate JavaScript</h3>
-                        <p>Mempelajari tentang Intermediate JavaScript</p>
-                        <div class="portofolio-tags">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2>Hubungi Saya</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <h4>📧 Email</h4>
-                        <p>jiunk4321@gmail.com</p>
-                    </div>
-                    <div class="contact-item">
-                        <h4>📱 Phone</h4>
-                        <p>+62 822-6073-0386</p>
-                    </div>
-                    <div class="contact-item">
-                        <h4>📍 Lokasi</h4>
-                        <p>Depok, Indonesia</p>
-                    </div>
-                </div>
-
-                <form onsubmit="handleSubmit(event)">
-                    <div class="form-group">
-                        <input type="text" placeholder="Nama Anda" required>
-                        <input type="email" placeholder="Email Anda" required>
-                    </div>
-                    <div class="form-group full">
-                        <input type="text" placeholder="Subjek" required>
-                    </div>
-                    <div class="form-group full">
-                        <textarea placeholder="Pesan Anda" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Kirim Pesan</button>
-                </form>
-            </div>
-        </div>
-    </section>
-      <script src="script.js"></script>
-
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Panji Portfolio.</p>
+        <p>&copy; 2025 Nama Anda. All rights reserved.</p>
+        <p>Dibuat dengan ❤️ dan kopi ☕</p>
     </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // Form submission
+        function handleSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            alert(`Terima kasih ${name}! Pesan Anda telah diterima. Saya akan segera menghubungi Anda di ${email}.`);
+            
+            // Reset form
+            e.target.reset();
+        }
+
+        // Navbar active state
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.navbar a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Animate on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.card, .portfolio-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
