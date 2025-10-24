@@ -3,9 +3,552 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Saya</title>
+    <title>Portofolio Modern</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --secondary: #8b5cf6;
+            --accent: #ec4899;
+            --dark: #0f172a;
+            --darker: #020617;
+            --light: #f1f5f9;
+            --text: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--darker);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-animation::before,
+        .bg-animation::after {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.3;
+        }
+
+        .bg-animation::before {
+            background: var(--primary);
+            top: -200px;
+            left: -200px;
+        }
+
+        .bg-animation::after {
+            background: var(--accent);
+            bottom: -200px;
+            right: -200px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(20px);
+            padding: 1rem 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transition: width 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Sections */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+            position: relative;
+        }
+
+        h1, h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Hero Section */
+        #home {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .profile-container {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            padding: 6px;
+            box-shadow: 0 0 60px rgba(99, 102, 241, 0.4);
+        }
+
+        .profile-image-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: var(--dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .profile-image-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #home h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        #home .subtitle {
+            font-size: 1.5rem;
+            color: var(--text);
+            opacity: 0.8;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* About Section */
+        .about-content {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        /* Grid Layout */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.1), transparent);
+            transition: left 0.6s;
+        }
+
+        .card:hover::before {
+            left: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 50px rgba(99, 102, 241, 0.3);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            color: var(--text);
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+        }
+
+        .card strong {
+            color: var(--accent);
+        }
+
+        /* Skills Section */
+        .skills-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        .skill-item {
+            margin-bottom: 2rem;
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .skill-name {
+            color: var(--text);
+        }
+
+        .skill-percent {
+            color: var(--primary);
+        }
+
+        .skill-bar {
+            width: 100%;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .skill-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 10px;
+            position: relative;
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+        }
+
+        .skill-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        }
+
+        /* Portfolio Section */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            position: relative;
+            height: 280px;
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.4s;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.05);
+        }
+
+        .portfolio-bg {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            transition: all 0.4s;
+        }
+
+        .portfolio-item:nth-child(2) .portfolio-bg {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+        }
+
+        .portfolio-item:nth-child(3) .portfolio-bg {
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+        }
+
+        .portfolio-item:nth-child(4) .portfolio-bg {
+            background: linear-gradient(135deg, #43e97b, #38f9d7);
+        }
+
+        .portfolio-item:nth-child(5) .portfolio-bg {
+            background: linear-gradient(135deg, #fa709a, #fee140);
+        }
+
+        .portfolio-item:nth-child(6) .portfolio-bg {
+            background: linear-gradient(135deg, #30cfd0, #330867);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-overlay h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-overlay p {
+            color: var(--text);
+            text-align: center;
+        }
+
+        /* Contact Form */
+        .contact-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 10px;
+            color: var(--text);
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 1.2rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.5);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: rgba(15, 23, 42, 0.8);
+            border-top: 1px solid rgba(99, 102, 241, 0.2);
+            margin-top: 5rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+            opacity: 0.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1, h2 {
+                font-size: 2rem;
+            }
+
+            #home h1 {
+                font-size: 2.5rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="bg-animation"></div>
+
     <!-- Navigation -->
     <nav>
         <ul>
@@ -20,217 +563,261 @@
         </ul>
     </nav>
 
-    <!-- Home / Profile -->
+    <!-- Home Section -->
     <section id="home">
-        <div class="profile-photo">
-             <img src="Muhamad Panji.png" alt="Foto Profil">
+        <div class="profile-container">
+            <div class="profile-image">
+                <div class="profile-image-inner">
+                    <!-- Ganti URL di bawah dengan URL foto profil Anda -->
+                    <img src="https://via.placeholder.com/200" alt="Foto Profil">
+                </div>
+            </div>
         </div>
-        <h1>Muhamad Panji</h1>
-        <p>Junior Web Developer</p>
+        <h1>Nama Anda</h1>
+        <p class="subtitle">Full Stack Developer & UI/UX Designer</p>
+        <div class="cta-buttons">
+            <a href="#portfolio" class="btn btn-primary">Lihat Portofolio</a>
+            <a href="#contact" class="btn btn-outline">Hubungi Saya</a>
+        </div>
     </section>
 
-    <!-- About -->
+    <!-- About Section -->
     <section id="about">
         <h2>Tentang Saya</h2>
-        <div class="about-box">
-            <p>Halo! Saya adalah seorang web developer yang passionate dalam menciptakan website yang menarik dan fungsional. Saya memiliki pengalaman dalam berbagai teknologi web modern dan selalu bersemangat untuk belajar hal-hal baru.</p>
-            <p>Saya percaya bahwa desain yang baik dan kode yang bersih adalah kunci untuk menciptakan pengalaman pengguna yang luar biasa. Mari kita ciptakan sesuatu yang amazing bersama!</p>
+        <div class="about-content">
+            <p>Halo! Saya adalah seorang developer yang passionate dalam menciptakan solusi digital yang inovatif dan user-friendly. Dengan pengalaman dalam full stack development dan UI/UX design, saya fokus menghadirkan produk berkualitas tinggi.</p>
+            <p>Saya percaya bahwa teknologi yang baik adalah yang dapat membuat hidup lebih mudah. Melalui kombinasi kreativitas dan technical expertise, saya berusaha menghadirkan pengalaman digital yang memorable dan meaningful.</p>
+            <p>Mari berkolaborasi untuk mewujudkan ide-ide brilian menjadi kenyataan!</p>
         </div>
     </section>
 
-    <!-- Education -->
+    <!-- Education Section -->
     <section id="education">
         <h2>Pendidikan</h2>
-        <div class="grid">
+        <div class="grid-3">
             <div class="card">
                 <h3>S1 Teknik Informatika</h3>
-                <p><strong>Universitas XYZ</strong></p>
+                <p><strong>Universitas Indonesia</strong></p>
                 <p>2018 - 2022</p>
-                <p>IPK: 3.75/4.00</p>
-                <p>Fokus pada Web Development dan Database Management</p>
+                <p>IPK: 3.85 / 4.00</p>
+                <p>Fokus pada Web Development, Mobile App, dan Artificial Intelligence</p>
             </div>
             <div class="card">
                 <h3>SMA Negeri 1</h3>
                 <p><strong>Jurusan IPA</strong></p>
                 <p>2015 - 2018</p>
-                <p>Nilai Rata-rata: 90</p>
-                <p>Aktif dalam klub komputer dan olimpiade sains</p>
+                <p>Rata-rata: 92.5</p>
+                <p>Aktif dalam Olimpiade Komputer dan Robotika</p>
             </div>
             <div class="card">
-                <h3>Bootcamp Coding</h3>
-                <p><strong>Tech Academy</strong></p>
+                <h3>Bootcamp Full Stack</h3>
+                <p><strong>Tech Academy Indonesia</strong></p>
                 <p>2022</p>
-                <p>Full Stack Web Development</p>
-                <p>React, Node.js, MongoDB, Express</p>
+                <p>Sertifikat Professional</p>
+                <p>React, Node.js, PostgreSQL, AWS Cloud</p>
             </div>
         </div>
     </section>
 
-    <!-- Organization -->
+    <!-- Organization Section -->
     <section id="organization">
         <h2>Pengalaman Organisasi</h2>
-        <div class="grid">
+        <div class="grid-3">
             <div class="card">
                 <h3>Ketua Divisi IT</h3>
-                <p><strong>Himpunan Mahasiswa 2021</strong></p>
-                <p>Memimpin tim dalam mengembangkan website resmi organisasi dan mengelola sistem informasi internal</p>
+                <p><strong>HMIF - Himpunan Mahasiswa Informatika</strong></p>
+                <p>2020 - 2021</p>
+                <p>Memimpin tim dalam pengembangan sistem informasi internal dan website organisasi. Mengelola 15+ anggota tim dengan berbagai project teknologi.</p>
             </div>
             <div class="card">
-                <h3>Koordinator Event</h3>
-                <p><strong>Tech Conference 2020</strong></p>
-                <p>Mengorganisir acara teknologi dengan 300+ peserta, mengelola tim dan sponsorship</p>
+                <h3>Project Manager</h3>
+                <p><strong>Tech Conference Indonesia 2021</strong></p>
+                <p>2021</p>
+                <p>Mengkoordinir event teknologi skala nasional dengan 500+ peserta, mengelola tim, sponsorship, dan technical infrastructure.</p>
             </div>
             <div class="card">
-                <h3>Mentor Coding</h3>
-                <p><strong>Komunitas Programmer 2019-2022</strong></p>
-                <p>Mengajar pemrograman web kepada 50+ siswa pemula</p>
+                <h3>Mentor & Tutor</h3>
+                <p><strong>Coding Community</strong></p>
+                <p>2019 - Sekarang</p>
+                <p>Mengajar pemrograman web kepada 100+ mahasiswa dan fresh graduate. Membuat curriculum dan materi pembelajaran interaktif.</p>
             </div>
         </div>
     </section>
 
-    <!-- Skills -->
+    <!-- Skills Section -->
     <section id="skills">
-        <h2>Skills</h2>
-        <div class="card" style="max-width: 800px; margin: 0 auto;">
-            <h3 style="text-align: center; margin-bottom: 2rem; font-size: 1.8rem;">Keahlian Teknis</h3>
-            
+        <h2>Keahlian</h2>
+        <div class="skills-container">
             <div class="skill-item">
                 <div class="skill-header">
-                    <span>HTML & CSS</span>
-                    <span>95%</span>
+                    <span class="skill-name">JavaScript & TypeScript</span>
+                    <span class="skill-percent">95%</span>
                 </div>
-                <div class="progress-bar">
-                    <div class="progress" style="width: 95%"></div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width: 95%"></div>
                 </div>
             </div>
-            
+
             <div class="skill-item">
                 <div class="skill-header">
-                    <span>JavaScript</span>
-                    <span>90%</span>
+                    <span class="skill-name">React & Next.js</span>
+                    <span class="skill-percent">92%</span>
                 </div>
-                <div class="progress-bar">
-                    <div class="progress" style="width: 90%"></div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width: 92%"></div>
                 </div>
             </div>
-            
+
             <div class="skill-item">
                 <div class="skill-header">
-                    <span>React</span>
-                    <span>85%</span>
+                    <span class="skill-name">Node.js & Express</span>
+                    <span class="skill-percent">88%</span>
                 </div>
-                <div class="progress-bar">
-                    <div class="progress" style="width: 85%"></div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width: 88%"></div>
                 </div>
             </div>
-            
+
             <div class="skill-item">
                 <div class="skill-header">
-                    <span>Node.js</span>
-                    <span>88%</span>
+                    <span class="skill-name">UI/UX Design (Figma)</span>
+                    <span class="skill-percent">85%</span>
                 </div>
-                <div class="progress-bar">
-                    <div class="progress" style="width: 88%"></div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width: 85%"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Achievements -->
+    <!-- Achievements Section -->
     <section id="achievements">
         <h2>Prestasi</h2>
-        <div class="grid">
+        <div class="grid-3">
             <div class="card">
-                <h3>🏆 Juara 1 Hackathon</h3>
-                <p><strong>National Coding Competition 2022</strong></p>
-                <p>Membuat aplikasi web inovatif untuk membantu UMKM dalam mengelola bisnis mereka</p>
+                <h3>🏆 Juara 1 National Hackathon</h3>
+                <p><strong>Indonesia Tech Competition 2022</strong></p>
+                <p>Mengembangkan platform AI-powered untuk membantu UMKM mengoptimalkan bisnis mereka. Kompetisi dengan 200+ tim dari seluruh Indonesia.</p>
             </div>
             <div class="card">
-                <h3>🎖️ Best Graduate</h3>
-                <p><strong>Universitas XYZ 2022</strong></p>
-                <p>Lulus dengan predikat cumlaude dan mendapat penghargaan mahasiswa terbaik</p>
+                <h3>🎖️ Best Graduate Award</h3>
+                <p><strong>Universitas Indonesia 2022</strong></p>
+                <p>Penghargaan sebagai lulusan terbaik dengan prestasi akademik dan non-akademik outstanding. IPK 3.85 dan aktif dalam berbagai kegiatan kampus.</p>
             </div>
             <div class="card">
-                <h3>⭐ Certified Developer</h3>
-                <p><strong>Professional Certification 2023</strong></p>
-                <p>Mendapat sertifikasi Full Stack Web Developer dari lembaga internasional</p>
+                <h3>⭐ AWS Certified Developer</h3>
+                <p><strong>Amazon Web Services 2023</strong></p>
+                <p>Tersertifikasi sebagai AWS Solutions Architect Associate dan Developer Associate. Expert dalam cloud infrastructure dan deployment.</p>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio -->
+    <!-- Portfolio Section -->
     <section id="portfolio">
         <h2>Portofolio</h2>
         <div class="portfolio-grid">
-            <div class="portfolio-card">
-                <div class="portfolio-img">🛒</div>
+            <div class="portfolio-item">
+                <div class="portfolio-bg">🛍️</div>
                 <div class="portfolio-overlay">
-                    <h3>E-Commerce Website</h3>
-                    <p>Platform belanja online dengan fitur lengkap</p>
+                    <h3>E-Commerce Platform</h3>
+                    <p>Platform belanja online full-featured dengan payment gateway, real-time chat, dan admin dashboard</p>
                 </div>
             </div>
-            <div class="portfolio-card">
-                <div class="portfolio-img">📱</div>
+            <div class="portfolio-item">
+                <div class="portfolio-bg">📱</div>
                 <div class="portfolio-overlay">
-                    <h3>Mobile App UI</h3>
-                    <p>Desain antarmuka aplikasi mobile modern</p>
+                    <h3>Mobile Banking App</h3>
+                    <p>Aplikasi mobile banking dengan fitur transfer, pembayaran, dan investasi yang aman dan mudah digunakan</p>
                 </div>
             </div>
-            <div class="portfolio-card">
-                <div class="portfolio-img">💼</div>
+            <div class="portfolio-item">
+                <div class="portfolio-bg">💼</div>
                 <div class="portfolio-overlay">
-                    <h3>Company Profile</h3>
-                    <p>Website profil perusahaan profesional</p>
+                    <h3>Corporate Website</h3>
+                    <p>Website perusahaan profesional dengan CMS, blog system, dan portofolio showcase</p>
                 </div>
             </div>
-            <div class="portfolio-card">
-                <div class="portfolio-img">📊</div>
+            <div class="portfolio-item">
+                <div class="portfolio-bg">📊</div>
                 <div class="portfolio-overlay">
-                    <h3>Dashboard Admin</h3>
-                    <p>Dashboard manajemen dengan charts interaktif</p>
+                    <h3>Analytics Dashboard</h3>
+                    <p>Dashboard real-time analytics dengan data visualization, reporting, dan export features</p>
                 </div>
             </div>
-            <div class="portfolio-card">
-                <div class="portfolio-img">🎨</div>
+            <div class="portfolio-item">
+                <div class="portfolio-bg">🎨</div>
                 <div class="portfolio-overlay">
-                    <h3>Portfolio Website</h3>
-                    <p>Website portofolio kreatif dan modern</p>
+                    <h3>Design System</h3>
+                    <p>Component library dan design system lengkap untuk konsistensi UI/UX di seluruh produk</p>
                 </div>
             </div>
-            <div class="portfolio-card">
-                <div class="portfolio-img">🎮</div>
+            <div class="portfolio-item">
+                <div class="portfolio-bg">🚀</div>
                 <div class="portfolio-overlay">
-                    <h3>Web Game</h3>
-                    <p>Game interaktif berbasis web</p>
+                    <h3>SaaS Platform</h3>
+                    <p>Platform SaaS multi-tenant dengan subscription billing, user management, dan API integration</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact -->
+    <!-- Contact Section -->
     <section id="contact">
         <h2>Hubungi Saya</h2>
-        <form class="contact-form" id="contactForm">
-            <div class="form-group">
-                <label for="name">Nama Lengkap</label>
-                <input type="text" id="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Pesan</label>
-                <textarea id="message" rows="5" required></textarea>
-            </div>
-            <button type="submit" class="btn">Kirim Pesan</button>
-        </form>
+        <div class="contact-container">
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Nama Lengkap</label>
+                    <input type="text" id="name" required placeholder="Masukkan nama Anda">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required placeholder="nama@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subjek</label>
+                    <input type="text" id="subject" required placeholder="Topik yang ingin dibicarakan">
+                </div>
+                <div class="form-group">
+                    <label for="message">Pesan</label>
+                    <textarea id="message" required placeholder="Tulis pesan Anda di sini..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Kirim Pesan</button>
+            </form>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 Nama Anda. All Rights Reserved.</p>
-        <p>Dibuat dengan ❤️ menggunakan HTML, CSS & JavaScript</p>
+        <p>Dibuat dengan ❤️ dan kode yang bersih</p>
     </footer>
+
+    <script>
+        // Smooth scroll untuk navigasi
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Handle form submit
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            
+            alert('Terima kasih ' + name + '! Pesan Anda telah diterima. Saya akan segera menghubungi Anda di ' + email);
+            
+            this.reset();
+        });
+    </script>
 </body>
 </html>
